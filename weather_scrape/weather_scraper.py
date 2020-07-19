@@ -20,16 +20,11 @@ class WebScraper:
 
 
     def scrape(self):
-        time.sleep(self.delay)
         page = self.web.get_page_source()
         soup = bs4.BeautifulSoup(page, features='html.parser')
-        time.sleep(self.delay)
         rains = soup.find_all('div', {'class': 'swg-col-wv1 swg-row'})
-        time.sleep(self.delay)
         daytime = soup.find_all('div', {'class': 'swg-col-period swg-row'})
-        time.sleep(self.delay)
         daytime_temp = soup.find_all('span', {'class': 'swg-text-large'})
-        time.sleep(self.delay)
 
         daytime_list = []
 
