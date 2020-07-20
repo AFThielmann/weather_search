@@ -12,4 +12,4 @@ In the folder email_sender, there has to be a login.json file of the following f
 
 Allow gmail to be opened by python with this link: https://myaccount.google.com/lesssecureapps
 
-If the conditions are true at any of the two following as well as the current day, an email will be send with an attach xlsx file that displays the weather and rain probability highlighted accordingly. 
+If the conditions are true at any of the two following as well as the current day, an email will be send with an attached .xlsx file that displays the weather and rain probability highlighted accordingly. 
