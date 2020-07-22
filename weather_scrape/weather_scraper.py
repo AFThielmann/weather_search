@@ -18,7 +18,6 @@ class WebScraper:
         time.sleep(self.delay)
         self.web.click("EINWILLIGEN")
 
-
     def scrape(self):
         page = self.web.get_page_source()
         soup = bs4.BeautifulSoup(page, features='html.parser')
@@ -27,7 +26,6 @@ class WebScraper:
         daytime_temp = soup.find_all('span', {'class': 'swg-text-large'})
 
         daytime_list = []
-
 
         for d, dt, r in zip(daytime, daytime_temp, rains):
             daytime = d.text.strip()
@@ -43,6 +41,7 @@ class WebScraper:
         df['temp'] = df['temp'].astype(int)
 
         return df
+
 
 if __name__ == "__main__":
     ws = WebScraper()
