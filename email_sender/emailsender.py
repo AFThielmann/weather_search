@@ -5,13 +5,15 @@ from email.mime.base import MIMEBase
 import json
 from email import encoders
 
-with open("pkg/login.json", "r") as lg:
+with open("email_sender/login.json", "r") as lg:
     LG = json.load(lg)
+
 
 class EmailSender:
     def __init__(self):
         self.fromaddr = LG["email_sender"]
         self.toaddr = LG["email_recipient"]
+
     def send(self, file):
         msg = MIMEMultipart()
         msg['From'] = self.fromaddr
